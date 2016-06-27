@@ -124,6 +124,9 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="500" height="500"/>
+                    <connections>
+                        <outlet property="monsterImg" destination="STz-tY-KQN" id="68E-Mi-7p7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
