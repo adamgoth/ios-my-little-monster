@@ -12,6 +12,8 @@
 		F9C147281D202E9A0054F2D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C147261D202E9A0054F2D1 /* Main.storyboard */; };
 		F9C1472A1D202E9A0054F2D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9C147291D202E9A0054F2D1 /* Assets.xcassets */; };
 		F9C1472D1D202E9A0054F2D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C1472B1D202E9A0054F2D1 /* LaunchScreen.storyboard */; };
+		F9C147351D21F8860054F2D1 /* DragImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C147341D21F8860054F2D1 /* DragImg.swift */; };
+		F9C147371D21FE230054F2D1 /* MonsterImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C147361D21FE230054F2D1 /* MonsterImg.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		F9C147291D202E9A0054F2D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9C1472C1D202E9A0054F2D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9C1472E1D202E9A0054F2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9C147341D21F8860054F2D1 /* DragImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragImg.swift; sourceTree = "<group>"; };
+		F9C147361D21FE230054F2D1 /* MonsterImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterImg.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				F9C147291D202E9A0054F2D1 /* Assets.xcassets */,
 				F9C1472B1D202E9A0054F2D1 /* LaunchScreen.storyboard */,
 				F9C1472E1D202E9A0054F2D1 /* Info.plist */,
+				F9C147341D21F8860054F2D1 /* DragImg.swift */,
+				F9C147361D21FE230054F2D1 /* MonsterImg.swift */,
 			);
 			path = "my-little-monster";
 			sourceTree = "<group>";
@@ -135,6 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C147371D21FE230054F2D1 /* MonsterImg.swift in Sources */,
+				F9C147351D21F8860054F2D1 /* DragImg.swift in Sources */,
 				F9C147251D202E9A0054F2D1 /* ViewController.swift in Sources */,
 				F9C147231D202E9A0054F2D1 /* AppDelegate.swift in Sources */,
 			);
