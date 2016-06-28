@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     
     var penalties = 0
     var timer: NSTimer!
+    var monsterHappy = false
+    var currentItem: UInt32 = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +44,13 @@ class ViewController: UIViewController {
     }
     
     func itemDroppedOnCharacter(notif: AnyObject) {
+        monsterHappy = true
+        startTimer()
         
+        foodImg.alpha = DIM_ALPHA
+        foodImg.userInteractionEnabled = false
+        heartImg.alpha = DIM_ALPHA
+        heartImg.userInteractionEnabled = false
     }
     
     func startTimer() {
@@ -54,25 +62,47 @@ class ViewController: UIViewController {
     }
     
     func changeGameState() {
-        penalties += 1
         
-        if penalties == 1 {
-            penaltyOneImg.alpha = OPAQUE
-            penaltyTwoImg.alpha = DIM_ALPHA
-        } else if penalties == 2 {
-            penaltyTwoImg.alpha = OPAQUE
-            penaltyThreeImg.alpha = DIM_ALPHA
-        } else if penalties >= 3 {
-            penaltyThreeImg.alpha = OPAQUE
+        if !monsterHappy {
+            penalties += 1
+            
+            if penalties == 1 {
+                penaltyOneImg.alpha = OPAQUE
+                penaltyTwoImg.alpha = DIM_ALPHA
+            } else if penalties == 2 {
+                penaltyTwoImg.alpha = OPAQUE
+                penaltyThreeImg.alpha = DIM_ALPHA
+            } else if penalties >= 3 {
+                penaltyThreeImg.alpha = OPAQUE
+            } else {
+                penaltyTwoImg.alpha = DIM_ALPHA
+                penaltyTwoImg.alpha = DIM_ALPHA
+                penaltyThreeImg.alpha = DIM_ALPHA
+            }
+            
+            if penalties >= MAX_PENALTIES {
+                gameOver()
+            }
+        }
+        
+        let rand = arc4random_uniform(2)
+        
+        if rand == 0 {
+            foodImg.alpha = DIM_ALPHA
+            foodImg.userInteractionEnabled = false
+            
+            heartImg.alpha = OPAQUE
+            heartImg.userInteractionEnabled = true
         } else {
-            penaltyTwoImg.alpha = DIM_ALPHA
-            penaltyTwoImg.alpha = DIM_ALPHA
-            penaltyThreeImg.alpha = DIM_ALPHA
+            heartImg.alpha = DIM_ALPHA
+            heartImg.userInteractionEnabled = false
+            
+            foodImg.alpha = OPAQUE
+            foodImg.userInteractionEnabled = true
         }
         
-        if penalties >= MAX_PENALTIES {
-            gameOver()
-        }
+        currentItem = rand
+        monsterHappy = false
     }
     
     func gameOver() {
