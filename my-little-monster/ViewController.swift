@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var penaltyOneImg: UIImageView!
     @IBOutlet weak var penaltyTwoImg: UIImageView!
     @IBOutlet weak var penaltyThreeImg: UIImageView!
+    @IBOutlet weak var restartBtn: UIButton!
     
     let DIM_ALPHA: CGFloat = 0.2
     let OPAQUE: CGFloat = 1.0
@@ -35,6 +36,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startGame()
+        
+    }
+
+    
+    @IBAction func onRestartTapped(sender: AnyObject) {
+        restartBtn.hidden = true
+        monsterImg.playIdleAnimation()
+        startGame()
+    }
+    
+    func startGame() {
+        penalties = 0
+        monsterHappy = false
         
         foodImg.dropTarget = monsterImg
         heartImg.dropTarget = monsterImg
@@ -66,7 +82,6 @@ class ViewController: UIViewController {
         }
         
         startTimer()
-        
     }
     
     func itemDroppedOnCharacter(notif: AnyObject) {
@@ -143,6 +158,8 @@ class ViewController: UIViewController {
         timer.invalidate()
         monsterImg.playDeathAnimation()
         sfxDeath.play()
+        musicPlayer.stop()
+        restartBtn.hidden = false
     }
     
 }
